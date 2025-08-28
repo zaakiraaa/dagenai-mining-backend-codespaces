@@ -1,23 +1,23 @@
 {
-  "name": "Azure DevOps in Codespaces",
-  "image": "mcr.microsoft.com/devcontainers/universal:2-linux",
-  "features": {
-    "ghcr.io/microsoft/codespace-features/external-repository:latest": {
-      "cloneUrl": "https://AngloDevOps@dev.azure.com/AngloDevOps/Digital%20Automation%20GenAI/_git/dagenai-mining-backend",
-      "folder": "/workspaces/ado-repos",
-      "cloneSecret": "ADO_PAT"  // Optional: use a secret for PAT
+    "name": "Azure DevOps in Codespaces",
+    "image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+    "features": {
+        "ghcr.io/microsoft/codespace-features/external-repository:latest": {
+            "cloneUrl": "https://angelodevops@dev.azure.com/AngeloDevOps/Digital%20Automation%20General/_git/dagenai_mining_backend",
+            "folder": "/workspaces/ado-repos",
+            "cloneSecret": "ADO_PAT"
+        }
+    },
+    "workspaceFolder": "/workspaces/ado-repos",
+    "initializeCommand": "mkdir -p ${localWorkspaceFolder}/../ado-repos",
+    "postStartCommand": "external-git clone",
+    "postAttachCommand": "external-git config",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "GitHub.copilot",
+                "GitHub.copilot-chat"
+            ]
+        }
     }
-  },
-  "workspaceFolder": "/workspaces/ado-repos",
-  "initializeCommand": "mkdir -p ${localWorkspaceFolder}/../ado-repos",
-  "postStartCommand": "external-git clone",
-  "postAttachCommand": "external-git config",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "GitHub.copilot",
-        "GitHub.copilot-chat"
-      ]
-    }
-  }
 }
